@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--
+sasithawathmal@gmail.com
+03/03/2015
+-->
+<html>
+    <head>
+        <title>add a summary</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- bootstrap core css -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+        <script src="bootstrap/jquery-1.11.2.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="tinymce/js/tinymce/tinymce.min.js"></script>
+    </head>
+    <body>
+        <div class="page-header">
+            <h1>add a summary<small>   inter-uni 2015</small></h1>
+        </div>
+        <div class="container-fluid">
+<!--            <div class="row">
+                
+            </div>-->
+            
+            <div class="row">
+                <!-- 
+                                        current state of summary will be shown here
+                                        js functionality
+                -->
+                <div class="alert alert-warning" id="state-alert" role="alert">please save your changes</div>
+            </div>
+
+            <div class="row">
+
+
+                <form class="form-add-summary">
+                    <label for="inputheading" class="sr-only">heading</label>
+                    <input type="text" id="inputheading" class="form-control" placeholder="summary heading" required autofocus>
+
+                    <br>
+                    <div>
+                        <ul class="nav nav-pills" role="tablist">
+                            <li role="presentation">
+                                <select class="form-control" id="select-univeristy1">
+                                    <option>university 1</option>
+                                    
+                                    <!-- should retrieve form database -->
+                                    <option>university of moratuwa</option>
+                                    <option>university of kelaniya</option>
+                                    <option>university of ruhuna</option>
+                                    <option>university of colombo</option>
+                                </select>
+                            </li>
+
+                            <li role="presentation"> <h4> VS </h4></li>
+                            <li role="presentation">
+                                <select class="form-control" id="select-univeristy2">
+                                    <option>university 2</option>
+                                    <option>university of moratuwa</option>
+                                    <option>university of kelaniya</option>
+                                    <option>university of ruhuna</option>
+                                    <option>university of colombo</option>
+                                </select>
+                            </li>
+
+                            
+
+                        </ul> <!-- /pills -->
+                    </div>
+                    <br>
+
+                    <textarea id="summary-content"></textarea>
+                    <br>
+
+                    <button class="btn btn-lg btn-primary" type="submit">
+                        <span class="glyphicon glyphicon-save" id="glyphicon-savebtn" aria-hidden="true"></span>
+                        save
+                    </button>
+
+                    <button class="btn btn-lg btn-warning" type="submit">
+                        <span class="glyphicon glyphicon-edit" id="glyphicon-editbtn" aria-hidden="true"></span>
+                        edit
+                    </button>
+                </form>
+
+
+            </div>
+        </div>
+
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('.dropdown-toggle').dropdown();
+                tinymce.init({
+                    selector: "textarea",
+                });
+
+            });
+        </script>
+    </body>
+</html>
